@@ -150,8 +150,8 @@ class FreeformTaskStackListener(
     }
 
     override fun onTaskRequestedOrientationChanged(taskId: Int, requestedOrientation: Int) {
-        dlog(TAG, "onTaskRequestedOrientationChanged $taskId $requestedOrientation")
         if (taskId == this.taskId) {
+            dlog(TAG, "onTaskRequestedOrientationChanged: $requestedOrientation")
             val max = max(window.freeformConfig.width, window.freeformConfig.height)
             val min = min(window.freeformConfig.width, window.freeformConfig.height)
             val maxHangUp = max(window.freeformConfig.hangUpWidth, window.freeformConfig.hangUpHeight)
